@@ -1,13 +1,13 @@
 "use client"
 
-import { useState } from "react"
+import { Suspense, useState } from "react"
 import Header from "./components/Header"
 import Breadcrumb from "./components/Breadcrumb"
 import FilterSidebar from "./components/FilterSidebar"
 import ProductGrid from "./components/ProductGrid"
 import BottomNav from "./components/BottomNav"
 
-export default function Home() {
+function PageContent() {
   const [filterOpen, setFilterOpen] = useState(false)
 
   return (
@@ -24,5 +24,13 @@ export default function Home() {
 
       <BottomNav />
     </div>
+  )
+}
+
+export default function Home() {
+  return (
+    <Suspense>
+      <PageContent />
+    </Suspense>
   )
 }
