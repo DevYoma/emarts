@@ -2,7 +2,7 @@ import Image from "next/image"
 import { ShoppingCart } from "lucide-react"
 import type { CardProps } from "../types"
 
-export default function ProductCard({ name, price, oldPrice, discount, stock, inStock, image }: CardProps) {
+export default function ProductCard({ name, price, oldPrice, discount, stock, inStock, image, priority }: CardProps) {
   return (
     <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden hover:shadow-md hover:-translate-y-0.5 transition-all duration-200 group flex flex-col h-full cursor-pointer">
       <div className="relative w-full aspect-[4/3] bg-gray-100 overflow-hidden shrink-0">
@@ -12,6 +12,7 @@ export default function ProductCard({ name, price, oldPrice, discount, stock, in
           fill
           sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
           className="object-cover group-hover:scale-[1.04] transition-transform duration-300"
+          priority={priority}
         />
         {discount && (
           <span className="absolute top-2 right-2 bg-[#8dc63f] text-white text-[11px] font-bold px-1.5 py-0.5 rounded-md">

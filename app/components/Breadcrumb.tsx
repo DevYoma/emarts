@@ -5,7 +5,7 @@ const crumbs = ["Home", "Market", "Search", "Mens-clothing"]
 export default function Breadcrumb() {
   return (
     <nav className="bg-white border-b border-gray-100">
-      <div className="w-[80%] mx-auto py-2 flex items-center gap-1">
+      <div className="max-w-6xl mx-auto px-4 md:px-6 lg:px-8 py-2 flex items-center gap-1">
         {crumbs.map((crumb, i) => {
           const isLast = i === crumbs.length - 1
           return (

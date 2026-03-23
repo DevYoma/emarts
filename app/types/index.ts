@@ -25,4 +25,5 @@ export type CardProps = {
   stock: string
   inStock: boolean
   image: string
+  priority?: boolean
 }
